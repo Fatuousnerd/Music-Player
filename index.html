@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <div class="details">
+                <div class="now-playing">Playing</div>
+                <div class="track-art"></div>
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+            <div class="slider_container">
+                <div class="current_time">00:00</div>
+                <input type="range" max="100" min="1" value="0" onchange="seekTo()" class="seek_slider">
+                <div class="total-duration">00:00</div>
+            </div>
+            <div class="slider_container">
+                <i class="material-symbols-outlined">volume_down</i>
+                <input type="range" max="100" min="1" value="99" onchange="setVolume()" class="volume_slider">
+                <i class="material-symbols-outlined">volume_up</i>
+            </div>
+            <div class="buttons">
+                <div class="random-track" onclick="randomTrack()">
+                    <i class="material-symbols-outlined" title="random" id="random">shuffle</i>
+                </div>
+                <div class="prev-track" onclick="prevTrack()">
+                    <i class="material-symbols-outlined" title="Previous">skip_previous</i>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                    <i class="material-symbols-outlined" title="Play">play_circle</i>
+                </div>
+                <div class="next-track" onclick="nextTrack()">
+                    <i class="material-symbols-outlined" title="Next">skip_next</i>
+                </div>
+                <div class="repeat-track" onclick="repeatTrack()">
+                    <i class="material-symbols-outlined" title="Repeat">replay</i>
+                </div>
+            </div>
+            <div id="wave">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
